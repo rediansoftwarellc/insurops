@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing — InsurOps</title>
+<meta name="description" content="Transparent InsurOps pricing for insurance brokers. Every plan includes a 30-day free trial with no credit card required. Regional pricing for Africa, India, and Rest of World."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://insurops.tech/pricing"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://insurops.tech/pricing"/>
+<meta property="og:title" content="Pricing — InsurOps"/>
+<meta property="og:description" content="Transparent InsurOps pricing. Every plan includes a 30-day free trial. No credit card required."/>
+<meta property="og:site_name" content="InsurOps"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
+<link rel="shortcut icon" href="images/favicon.svg"/>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="152" height="38" viewBox="0 0 152 38" fill="none">
+        <line x1="3"  y1="13" x2="17" y2="1"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="9"  y1="16" x2="23" y2="4"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="15" y1="19" x2="29" y2="7"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="21" y1="22" x2="35" y2="10" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="27" y1="25" x2="41" y2="13" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="0" y="37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="1.8">INSUROPS</text>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="/brokers"     class="nav-link">For Brokers</a>
+      <a href="/insurers"    class="nav-link">For Insurers</a>
+      <a href="/integration" class="nav-link">Integration</a>
+      <a href="/partners"    class="nav-link">Partners</a>
+      <a href="/pricing"     class="nav-link active">Pricing</a>
+    </nav>
+    <div class="nav-actions">
+      <button onclick="openModal('modal-partner')" class="btn btn-sm btn-ghost-white">Partner with Us</button>
+      <button onclick="openModal('modal-demo')"    class="btn btn-sm btn-primary">Request Demo</button>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">
+        <span class="page-hero-dot"></span>
+        Pricing
+      </div>
+      <h1>Transparent Pricing.<br/>No Hidden Fees.</h1>
+      <p>Every plan includes a 30-day free trial with no credit card required. All prices billed annually — regional pricing available for Africa, India, and the rest of the world.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="pricing-toggle-row fade-up">
+      <span class="pricing-toggle-label">Region</span>
+      <div class="region-selector">
+        <button class="region-btn">Africa</button>
+        <button class="region-btn">India</button>
+        <button class="region-btn active">Rest of World</button>
+      </div>
+    </div>
+
+    <div class="pricing-cards">
+      <!-- Starter -->
+      <div class="pricing-card fade-up">
+        <div class="pc-trial">30 Days Free</div>
+        <div class="pc-tier">Starter</div>
+        <div class="pc-name">Solo &amp; Small Teams</div>
+        <div class="pc-desc">Individual brokers and small agencies getting started</div>
+        <div class="pc-price">
+          <span class="pc-sym">$</span>
+          <span class="pc-val">149</span>
+          <span class="pc-per">/mo</span>
+        </div>
+        <div class="pc-billing">Billed annually · save up to 17% vs monthly</div>
+        <hr class="pc-sep"/>
+        <ul class="pc-features">
+          <li class="pc-feature"><span class="pc-check">✓</span> Up to 200 clients &amp; policies</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Products &amp; policy management</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Quotes management</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Invoices &amp; billing</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Online payment collection</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Commission tracking</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Basic reporting</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Email support</li>
+        </ul>
+        <button onclick="openModal('modal-demo')" class="btn btn-md btn-outline" style="width:100%;justify-content:center;">Get Started Free</button>
+      </div>
+
+      <!-- Professional (Featured) -->
+      <div class="pricing-card pc-featured fade-up delay-1">
+        <div class="pc-badge">Most Popular</div>
+        <div class="pc-trial">30 Days Free</div>
+        <div class="pc-tier">Professional</div>
+        <div class="pc-name">Growing Brokers</div>
+        <div class="pc-desc">Established brokerages scaling operations and teams</div>
+        <div class="pc-price">
+          <span class="pc-sym">$</span>
+          <span class="pc-val">499</span>
+          <span class="pc-per">/mo</span>
+        </div>
+        <div class="pc-billing">Billed annually · save up to 17% vs monthly</div>
+        <hr class="pc-sep"/>
+        <ul class="pc-features">
+          <li class="pc-feature"><span class="pc-check">✓</span> Unlimited clients &amp; policies</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Everything in Starter</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Advanced CRM features</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> End-to-end policy lifecycle</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Customer portal</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Branch management</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Real-time analytics &amp; dashboards</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Role-based access control</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Priority support</li>
+        </ul>
+        <button onclick="openModal('modal-demo')" class="btn btn-md btn-primary" style="width:100%;justify-content:center;">Get Started Free</button>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card fade-up delay-2">
+        <div class="pc-trial">Custom Engagement</div>
+        <div class="pc-tier">Enterprise</div>
+        <div class="pc-name">Large Organisations</div>
+        <div class="pc-desc">Multi-branch brokerages and regional networks</div>
+        <div class="pc-price">
+          <span class="pc-sym" style="font-size:2rem;font-weight:800;color:var(--navy-900);letter-spacing:-0.5px;">Custom</span>
+        </div>
+        <div class="pc-billing" style="margin-top:4px;">Tailored to your organisation's scale &amp; requirements</div>
+        <hr class="pc-sep"/>
+        <ul class="pc-features">
+          <li class="pc-feature"><span class="pc-check">✓</span> Everything in Professional</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> API &amp; custom integrations</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> White-label deployment</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Dedicated account manager</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> SLA guarantees</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Custom workflows &amp; automation</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Advanced security &amp; compliance</li>
+          <li class="pc-feature"><span class="pc-check">✓</span> Dedicated infrastructure option</li>
+        </ul>
+        <button onclick="openModal('modal-demo')" class="btn btn-md btn-outline" style="width:100%;justify-content:center;">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Every Plan Includes
+        <span class="section-eyebrow-line"></span>
+      </div>
+      <h2 class="section-title">No Surprises. No Upsells.</h2>
+      <p class="section-sub">Every InsurOps plan ships complete. The features below are included in Starter and above — no premium add-ons required.</p>
+    </div>
+    <div class="benefits-strip">
+      <div class="benefit-tile fade-up">
+        <div class="benefit-tile-num">Included</div>
+        <h4>Free Onboarding &amp; Migration</h4>
+        <p>We help you migrate your existing policy data and configure the platform for your workflows — at no extra cost on any plan.</p>
+      </div>
+      <div class="benefit-tile fade-up delay-1">
+        <div class="benefit-tile-num">Included</div>
+        <h4>Unlimited API Access</h4>
+        <p>Full API access on all plans. Connect your payment gateways, insurer systems, and custom tools without paying extra per integration.</p>
+      </div>
+      <div class="benefit-tile fade-up delay-2">
+        <div class="benefit-tile-num">Included</div>
+        <h4>Regular Feature Updates</h4>
+        <p>New features ship to all plans at no extra charge. We build for the entire customer base — not just enterprise upsells.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm" style="background:var(--white)">
+  <div class="container">
+    <div class="cta-band fade-up">
+      <div class="cta-band-text">
+        <h2>Start Your 30-Day Free Trial</h2>
+        <p>No credit card. No commitment. Use the full platform with your real data — only pay when you're ready.</p>
+      </div>
+      <div class="cta-band-actions">
+        <button onclick="openModal('modal-demo')" class="btn btn-lg btn-primary">
+          Get Started Free
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button onclick="openModal('modal-demo')" class="btn btn-lg btn-outline-white" style="color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.2)">Talk to Sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <svg width="152" height="38" viewBox="0 0 152 38" fill="none">
+          <line x1="3"  y1="13" x2="17" y2="1"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="9"  y1="16" x2="23" y2="4"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="15" y1="19" x2="29" y2="7"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="21" y1="22" x2="35" y2="10" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="27" y1="25" x2="41" y2="13" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="0" y="37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="1.8">INSUROPS</text>
+        </svg>
+        <p class="footer-brand-desc">Insurance management platform built for Africa — with global reach across India, the UAE, and the Americas. A product of Redian Software.</p>
+        <div class="footer-brand-focus">Global Offices</div>
+        <div class="footer-offices">
+          <div class="footer-office"><span class="fo-country">India (HQ)</span></div>
+          <div class="footer-office"><span class="fo-country">United States</span></div>
+          <div class="footer-office"><span class="fo-country">UAE</span></div>
+          <div class="footer-office"><span class="fo-country">Kenya</span></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="/brokers">For Brokers</a></li>
+          <li><a href="/insurers">For Insurers</a></li>
+          <li><a href="/integration">Integration</a></li>
+          <li><a href="#">API Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Features</h5>
+        <ul>
+          <li><a href="#">Policy Management</a></li>
+          <li><a href="#">Client CRM</a></li>
+          <li><a href="#">Claims Tracking</a></li>
+          <li><a href="#">Commission Engine</a></li>
+          <li><a href="#">Compliance Reports</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Redian Software</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="#" onclick="openModal('modal-demo');return false;">Contact Sales</a></li>
+          <li><a href="/partners">Partner Programme</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Help Centre</a></li>
+          <li><a href="#" onclick="openModal('modal-demo');return false;">Request a Demo</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">© 2025 Redian Software. All rights reserved. InsurOps is a product of Redian Software.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-demo" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <div class="modal-eyebrow">30-Day Free Trial</div>
+        <h2 class="modal-title" id="demo-title">Start Free Trial</h2>
+        <p class="modal-subtitle">No credit card required. Full platform access for 30 days.</p>
+      </div>
+      <button class="modal-close" aria-label="Close" data-modal-close="modal-demo">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form" id="demo-form">
+        <form id="form-demo" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="demo-name">Full Name<span>*</span></label>
+              <input class="form-input" type="text" id="demo-name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demo-email">Work Email<span>*</span></label>
+              <input class="form-input" type="email" id="demo-email" name="email" placeholder="jane@brokerage.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="demo-company">Company Name<span>*</span></label>
+              <input class="form-input" type="text" id="demo-company" name="company" placeholder="Acme Insurance Brokers" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demo-country">Country<span>*</span></label>
+              <select class="form-select" id="demo-country" name="country" required>
+                <option value="" disabled selected>Select country</option>
+                <option>Afghanistan</option>
+                <option>Albania</option>
+                <option>Algeria</option>
+                <option>Angola</option>
+                <option>Argentina</option>
+                <option>Armenia</option>
+                <option>Australia</option>
+                <option>Austria</option>
+                <option>Azerbaijan</option>
+                <option>Bahamas</option>
+                <option>Bahrain</option>
+                <option>Bangladesh</option>
+                <option>Barbados</option>
+                <option>Belarus</option>
+                <option>Belgium</option>
+                <option>Belize</option>
+                <option>Benin</option>
+                <option>Bhutan</option>
+                <option>Bolivia</option>
+                <option>Bosnia and Herzegovina</option>
+                <option>Botswana</option>
+                <option>Brazil</option>
+                <option>Brunei</option>
+                <option>Bulgaria</option>
+                <option>Burkina Faso</option>
+                <option>Burundi</option>
+                <option>Cambodia</option>
+                <option>Cameroon</option>
+                <option>Canada</option>
+                <option>Cape Verde</option>
+                <option>Central African Republic</option>
+                <option>Chad</option>
+                <option>Chile</option>
+                <option>China</option>
+                <option>Colombia</option>
+                <option>Comoros</option>
+                <option>Congo (DRC)</option>
+                <option>Congo (Republic)</option>
+                <option>Costa Rica</option>
+                <option>Croatia</option>
+                <option>Cuba</option>
+                <option>Cyprus</option>
+                <option>Czech Republic</option>
+                <option>Denmark</option>
+                <option>Djibouti</option>
+                <option>Dominican Republic</option>
+                <option>Ecuador</option>
+                <option>Egypt</option>
+                <option>El Salvador</option>
+                <option>Equatorial Guinea</option>
+                <option>Eritrea</option>
+                <option>Estonia</option>
+                <option>Eswatini</option>
+                <option>Ethiopia</option>
+                <option>Fiji</option>
+                <option>Finland</option>
+                <option>France</option>
+                <option>Gabon</option>
+                <option>Gambia</option>
+                <option>Georgia</option>
+                <option>Germany</option>
+                <option>Ghana</option>
+                <option>Greece</option>
+                <option>Guatemala</option>
+                <option>Guinea</option>
+                <option>Guinea-Bissau</option>
+                <option>Guyana</option>
+                <option>Haiti</option>
+                <option>Honduras</option>
+                <option>Hungary</option>
+                <option>Iceland</option>
+                <option>India</option>
+                <option>Indonesia</option>
+                <option>Iran</option>
+                <option>Iraq</option>
+                <option>Ireland</option>
+                <option>Israel</option>
+                <option>Italy</option>
+                <option>Ivory Coast</option>
+                <option>Jamaica</option>
+                <option>Japan</option>
+                <option>Jordan</option>
+                <option>Kazakhstan</option>
+                <option>Kenya</option>
+                <option>Kuwait</option>
+                <option>Kyrgyzstan</option>
+                <option>Laos</option>
+                <option>Latvia</option>
+                <option>Lebanon</option>
+                <option>Lesotho</option>
+                <option>Liberia</option>
+                <option>Libya</option>
+                <option>Liechtenstein</option>
+                <option>Lithuania</option>
+                <option>Luxembourg</option>
+                <option>Madagascar</option>
+                <option>Malawi</option>
+                <option>Malaysia</option>
+                <option>Maldives</option>
+                <option>Mali</option>
+                <option>Malta</option>
+                <option>Mauritania</option>
+                <option>Mauritius</option>
+                <option>Mexico</option>
+                <option>Moldova</option>
+                <option>Monaco</option>
+                <option>Mongolia</option>
+                <option>Montenegro</option>
+                <option>Morocco</option>
+                <option>Mozambique</option>
+                <option>Myanmar</option>
+                <option>Namibia</option>
+                <option>Nepal</option>
+                <option>Netherlands</option>
+                <option>New Zealand</option>
+                <option>Nicaragua</option>
+                <option>Niger</option>
+                <option>Nigeria</option>
+                <option>North Macedonia</option>
+                <option>Norway</option>
+                <option>Oman</option>
+                <option>Pakistan</option>
+                <option>Panama</option>
+                <option>Papua New Guinea</option>
+                <option>Paraguay</option>
+                <option>Peru</option>
+                <option>Philippines</option>
+                <option>Poland</option>
+                <option>Portugal</option>
+                <option>Qatar</option>
+                <option>Romania</option>
+                <option>Russia</option>
+                <option>Rwanda</option>
+                <option>Saudi Arabia</option>
+                <option>Senegal</option>
+                <option>Serbia</option>
+                <option>Sierra Leone</option>
+                <option>Singapore</option>
+                <option>Slovakia</option>
+                <option>Slovenia</option>
+                <option>Somalia</option>
+                <option>South Africa</option>
+                <option>South Korea</option>
+                <option>South Sudan</option>
+                <option>Spain</option>
+                <option>Sri Lanka</option>
+                <option>Sudan</option>
+                <option>Suriname</option>
+                <option>Sweden</option>
+                <option>Switzerland</option>
+                <option>Syria</option>
+                <option>Taiwan</option>
+                <option>Tajikistan</option>
+                <option>Tanzania</option>
+                <option>Thailand</option>
+                <option>Togo</option>
+                <option>Trinidad and Tobago</option>
+                <option>Tunisia</option>
+                <option>Turkey</option>
+                <option>Turkmenistan</option>
+                <option>Uganda</option>
+                <option>Ukraine</option>
+                <option>United Arab Emirates</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Uruguay</option>
+                <option>Uzbekistan</option>
+                <option>Venezuela</option>
+                <option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Zambia</option>
+                <option>Zimbabwe</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="demo-size">Team Size<span>*</span></label>
+              <select class="form-select" id="demo-size" name="size" required>
+                <option value="" disabled selected>Select size</option>
+                <option>1–5 agents</option><option>6–20 agents</option>
+                <option>21–100 agents</option><option>100+ agents</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demo-plan">Plan Interest</label>
+              <select class="form-select" id="demo-plan" name="plan">
+                <option value="" disabled selected>Select plan</option>
+                <option>Starter</option><option>Professional</option><option>Enterprise</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-submit">Start Free Trial →</button>
+            <p class="form-note">No credit card required. We'll be in touch within 1 business day.</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-success" id="demo-success">
+        <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Request Received!</div>
+        <p class="success-body">Our team will reach out within 1 business day to set up your trial account.</p>
+        <button class="form-submit" style="max-width:200px;margin-top:8px" onclick="closeModal('modal-demo')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-partner" role="dialog" aria-modal="true" aria-labelledby="partner-title">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <div class="modal-eyebrow">Founding Partner Programme</div>
+        <h2 class="modal-title" id="partner-title">Apply to Partner</h2>
+        <p class="modal-subtitle">Tell us about your organisation and how you'd like to work with InsurOps.</p>
+      </div>
+      <button class="modal-close" aria-label="Close" data-modal-close="modal-partner">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form" id="partner-form">
+        <form id="form-partner" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="p-name">Full Name<span>*</span></label>
+              <input class="form-input" type="text" id="p-name" name="name" placeholder="John Okonkwo" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-email">Work Email<span>*</span></label>
+              <input class="form-input" type="email" id="p-email" name="email" placeholder="john@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="p-company">Company Name<span>*</span></label>
+              <input class="form-input" type="text" id="p-company" name="company" placeholder="Your Organisation" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-type">Partner Type<span>*</span></label>
+              <select class="form-select" id="p-type" name="partner_type" required>
+                <option value="" disabled selected>Select type</option>
+                <option>Insurer / Underwriter</option>
+                <option>Payment Gateway</option>
+                <option>Reseller / Integrator</option>
+                <option>Technology Partner</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-submit">Submit Application →</button>
+            <p class="form-note">A dedicated account manager will contact you within 2 business days.</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-success" id="partner-success">
+        <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Application Submitted!</div>
+        <p class="success-body">Our partnerships team will be in touch within 2 business days.</p>
+        <button class="form-submit" style="max-width:200px;margin-top:8px" onclick="closeModal('modal-partner')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

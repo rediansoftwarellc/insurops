@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Block access to config / hidden files
+Disallow: /.htaccess
+Disallow: /.git/
+Disallow: /.claude/
+
+Sitemap: https://insurops.tech/sitemap.xml

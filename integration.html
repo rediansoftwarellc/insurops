@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Integration Architecture — InsurOps</title>
+<meta name="description" content="InsurOps uses an API-first architecture with REST APIs, real-time webhooks, and enterprise-grade security. OpenAPI 3.0 documentation, multi-language SDKs, and a full sandbox environment."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://insurops.tech/integration"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://insurops.tech/integration"/>
+<meta property="og:title" content="Integration Architecture — InsurOps"/>
+<meta property="og:description" content="API-first architecture connecting insurers and brokers. REST API, real-time webhooks, enterprise security — OpenAPI 3.0 documented."/>
+<meta property="og:site_name" content="InsurOps"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
+<link rel="shortcut icon" href="images/favicon.svg"/>
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/home.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="152" height="38" viewBox="0 0 152 38" fill="none">
+        <line x1="3"  y1="13" x2="17" y2="1"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="9"  y1="16" x2="23" y2="4"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="15" y1="19" x2="29" y2="7"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="21" y1="22" x2="35" y2="10" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="27" y1="25" x2="41" y2="13" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="0" y="37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="1.8">INSUROPS</text>
+      </svg>
+    </a>
+    <nav class="nav-links">
+      <a href="/brokers"     class="nav-link">For Brokers</a>
+      <a href="/insurers"    class="nav-link">For Insurers</a>
+      <a href="/integration" class="nav-link active">Integration</a>
+      <a href="/partners"    class="nav-link">Partners</a>
+      <a href="/pricing"     class="nav-link">Pricing</a>
+    </nav>
+    <div class="nav-actions">
+      <button onclick="openModal('modal-partner')" class="btn btn-sm btn-ghost-white">Partner with Us</button>
+      <button onclick="openModal('modal-demo')"    class="btn btn-sm btn-primary">Request Demo</button>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">
+        <span class="page-hero-dot"></span>
+        Integration Architecture
+      </div>
+      <h1>API-First.<br/>Built for Enterprise Scale.</h1>
+      <p>A standards-based REST API with real-time webhooks and enterprise-grade security connects insurers and brokers — with full OpenAPI 3.0 documentation, multi-language SDKs, and a sandbox environment for pre-production testing.</p>
+      <div class="page-hero-ctas">
+        <button onclick="openModal('modal-demo')" class="btn btn-xl btn-primary">
+          Request API Access
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="/insurers" class="btn btn-xl btn-outline-white">For Insurers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW DIAGRAM -->
+<section class="section" id="integration">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Data Architecture
+        <span class="section-eyebrow-line"></span>
+      </div>
+      <h2 class="section-title">How Brokers and Insurers<br/>Connect Through InsurOps</h2>
+      <p class="section-sub">An API-first architecture with structured, auditable data flows between all parties — real time, every time.</p>
+    </div>
+
+    <div class="flow-diagram fade-up">
+      <div class="flow-node">
+        <div class="flow-node-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V5a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v16"/><path d="M9 21v-5h6v5"/><rect x="8" y="8" width="2.5" height="2.5" rx=".3"/><rect x="13.5" y="8" width="2.5" height="2.5" rx=".3"/><rect x="8" y="13" width="2.5" height="2.5" rx=".3"/><rect x="13.5" y="13" width="2.5" height="2.5" rx=".3"/></svg>
+        </div>
+        <h4>Insurance Company</h4>
+        <p>Configures products, pricing, coverage rules, and commission structures via REST API — once, not per broker</p>
+      </div>
+      <div class="flow-connector">
+        <div class="flow-connector-arrow"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="flow-node" style="background:var(--navy-900);">
+        <div class="flow-node-icon dark">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h4 style="color:white;">InsurOps Platform</h4>
+        <p style="color:rgba(255,255,255,0.5);">Central hub — product catalogue, policy engine, commission calculator, analytics, and audit trail</p>
+      </div>
+      <div class="flow-connector" style="background:rgba(255,255,255,0.1);">
+        <div class="flow-connector-arrow" style="background:var(--navy-800);border-color:rgba(255,255,255,0.12);">
+          <svg viewBox="0 0 24 24" style="stroke:rgba(255,255,255,0.5)"><polyline points="9 18 15 12 9 6"/></svg>
+        </div>
+      </div>
+      <div class="flow-node">
+        <div class="flow-node-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h4>Insurance Broker</h4>
+        <p>Quotes, issues, manages, and renews policies for end clients through a unified interface — all insurers in one place</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC CARDS -->
+<section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)">
+  <div class="container">
+    <div class="section-header centered fade-up">
+      <div class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Technical Specifications
+        <span class="section-eyebrow-line"></span>
+      </div>
+      <h2 class="section-title">Enterprise-Grade From the Ground Up</h2>
+      <p class="section-sub">Every layer of the InsurOps platform is built to the standards enterprise insurance operations demand.</p>
+    </div>
+    <div class="spec-cards">
+      <div class="spec-card fade-up">
+        <div class="spec-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h4>REST API Integration</h4>
+        <p>Standards-based JSON API with comprehensive documentation, multi-language SDKs (Python, Node.js, Java, PHP), and a full sandbox environment for pre-production testing with real policy flows.</p>
+        <span class="spec-tag">OpenAPI 3.0</span>
+      </div>
+      <div class="spec-card fade-up delay-1">
+        <div class="spec-card-icon">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h4>Real-Time Webhooks</h4>
+        <p>Instant event notifications for policy issuance, claims status changes, payment confirmations, renewals, endorsements, and commission settlements — sub-second delivery with retry logic.</p>
+        <span class="spec-tag">Sub-second delivery</span>
+      </div>
+      <div class="spec-card fade-up delay-2">
+        <div class="spec-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Enterprise Security</h4>
+        <p>TLS 1.3 in transit, AES-256 at rest, OAuth 2.0 with PKCE, role-based access controls, IP allowlisting, and immutable audit trails on every transaction and state change.</p>
+        <span class="spec-tag">SOC 2 Aligned</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL SPECS -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">
+        <span class="section-eyebrow-line"></span>
+        Platform Capabilities
+      </div>
+      <h2 class="section-title">Built for the Complexity<br/>of Insurance Operations</h2>
+      <p class="section-sub">Insurance workflows are uniquely complex. InsurOps is designed around those specifics — not generic enterprise software adapted for insurance.</p>
+    </div>
+    <div class="benefits-strip">
+      <div class="benefit-tile fade-up">
+        <div class="benefit-tile-num">Event Streaming</div>
+        <h4>Structured Event Model</h4>
+        <p>Every platform action emits a typed, versioned event. Policy issued, premium received, claim lodged, commission settled — all streamed in real time with full replay capability.</p>
+      </div>
+      <div class="benefit-tile fade-up delay-1">
+        <div class="benefit-tile-num">Multi-Tenancy</div>
+        <h4>Isolated Tenant Architecture</h4>
+        <p>Each brokerage runs in a fully isolated environment with dedicated data partitions. No cross-tenant data access. Suitable for enterprise deployments and white-label configurations.</p>
+      </div>
+      <div class="benefit-tile fade-up delay-2">
+        <div class="benefit-tile-num">Compliance</div>
+        <h4>Regulator-Ready Audit Trail</h4>
+        <p>Immutable, timestamped logs of every action taken on every record. Exportable in standard formats for regulatory submissions — IRDAI, FCA, IRA Kenya, and UAE Insurance Authority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm" style="background:var(--gray-50);border-top:1px solid var(--gray-200)">
+  <div class="container">
+    <div class="cta-band fade-up">
+      <div class="cta-band-text">
+        <h2>Ready to Integrate?</h2>
+        <p>Request sandbox credentials and start building your integration. Our technical team will guide you from first API call to production go-live.</p>
+      </div>
+      <div class="cta-band-actions">
+        <button onclick="openModal('modal-demo')" class="btn btn-lg btn-primary">
+          Request API Access
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button onclick="openModal('modal-partner')" class="btn btn-lg btn-outline-white" style="color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.2)">Partner Programme</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <svg width="152" height="38" viewBox="0 0 152 38" fill="none">
+          <line x1="3"  y1="13" x2="17" y2="1"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="9"  y1="16" x2="23" y2="4"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="15" y1="19" x2="29" y2="7"  stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="21" y1="22" x2="35" y2="10" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="27" y1="25" x2="41" y2="13" stroke="#4B7FD4" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="0" y="37" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-weight="900" font-size="18" fill="white" letter-spacing="1.8">INSUROPS</text>
+        </svg>
+        <p class="footer-brand-desc">Insurance management platform built for Africa — with global reach across India, the UAE, and the Americas. A product of Redian Software.</p>
+        <div class="footer-brand-focus">Global Offices</div>
+        <div class="footer-offices">
+          <div class="footer-office"><span class="fo-country">India (HQ)</span></div>
+          <div class="footer-office"><span class="fo-country">United States</span></div>
+          <div class="footer-office"><span class="fo-country">UAE</span></div>
+          <div class="footer-office"><span class="fo-country">Kenya</span></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="/brokers">For Brokers</a></li>
+          <li><a href="/insurers">For Insurers</a></li>
+          <li><a href="/integration">Integration</a></li>
+          <li><a href="#">API Docs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Features</h5>
+        <ul>
+          <li><a href="#">Policy Management</a></li>
+          <li><a href="#">Client CRM</a></li>
+          <li><a href="#">Claims Tracking</a></li>
+          <li><a href="#">Commission Engine</a></li>
+          <li><a href="#">Compliance Reports</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About Redian Software</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="#" onclick="openModal('modal-demo');return false;">Contact Sales</a></li>
+          <li><a href="/partners">Partner Programme</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#">Help Centre</a></li>
+          <li><a href="#" onclick="openModal('modal-demo');return false;">Request a Demo</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-left">© 2025 Redian Software. All rights reserved. InsurOps is a product of Redian Software.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-demo" role="dialog" aria-modal="true" aria-labelledby="demo-title">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <div class="modal-eyebrow">API Access</div>
+        <h2 class="modal-title" id="demo-title">Request API Access</h2>
+        <p class="modal-subtitle">Get sandbox credentials and start building your integration.</p>
+      </div>
+      <button class="modal-close" aria-label="Close" data-modal-close="modal-demo">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form" id="demo-form">
+        <form id="form-demo" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="demo-name">Full Name<span>*</span></label>
+              <input class="form-input" type="text" id="demo-name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demo-email">Work Email<span>*</span></label>
+              <input class="form-input" type="email" id="demo-email" name="email" placeholder="jane@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="demo-company">Company<span>*</span></label>
+              <input class="form-input" type="text" id="demo-company" name="company" placeholder="Your Company" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="demo-role">Role<span>*</span></label>
+              <select class="form-select" id="demo-role" name="role" required>
+                <option value="" disabled selected>Select role</option>
+                <option>Developer / Engineer</option>
+                <option>CTO / Technical Lead</option>
+                <option>Product Manager</option>
+                <option>Business / Operations</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-submit">Request Sandbox Access →</button>
+            <p class="form-note">We'll send sandbox credentials within 1 business day.</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-success" id="demo-success">
+        <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Request Received!</div>
+        <p class="success-body">Our technical team will send your sandbox credentials within 1 business day.</p>
+        <button class="form-submit" style="max-width:200px;margin-top:8px" onclick="closeModal('modal-demo')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-partner" role="dialog" aria-modal="true" aria-labelledby="partner-title">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-head-text">
+        <div class="modal-eyebrow">Founding Partner Programme</div>
+        <h2 class="modal-title" id="partner-title">Apply to Partner</h2>
+        <p class="modal-subtitle">Tell us about your organisation and how you'd like to work with InsurOps.</p>
+      </div>
+      <button class="modal-close" aria-label="Close" data-modal-close="modal-partner">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-form" id="partner-form">
+        <form id="form-partner" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="p-name">Full Name<span>*</span></label>
+              <input class="form-input" type="text" id="p-name" name="name" placeholder="John Okonkwo" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-email">Work Email<span>*</span></label>
+              <input class="form-input" type="email" id="p-email" name="email" placeholder="john@company.com" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="p-company">Company Name<span>*</span></label>
+              <input class="form-input" type="text" id="p-company" name="company" placeholder="Your Organisation" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-type">Partner Type<span>*</span></label>
+              <select class="form-select" id="p-type" name="partner_type" required>
+                <option value="" disabled selected>Select type</option>
+                <option>Insurer / Underwriter</option>
+                <option>Payment Gateway</option>
+                <option>Reseller / Integrator</option>
+                <option>Technology Partner</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-footer">
+            <button type="submit" class="form-submit">Submit Application →</button>
+            <p class="form-note">A dedicated account manager will contact you within 2 business days.</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-success" id="partner-success">
+        <div class="success-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Application Submitted!</div>
+        <p class="success-body">Our partnerships team will be in touch within 2 business days.</p>
+        <button class="form-submit" style="max-width:200px;margin-top:8px" onclick="closeModal('modal-partner')">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
