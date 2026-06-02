@@ -1,0 +1,11 @@
+{
+  "name": "insurops/website",
+  "description": "InsurOps marketing site — PHP form handler",
+  "require": {
+    "phpmailer/phpmailer": "^6.9"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "vendor-dir": "vendor"
+  }
+}

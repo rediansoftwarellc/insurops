@@ -1,0 +1,12 @@
+# Deny direct directory listing
+Options -Indexes
+
+# Only allow send.php to be called
+<Files "*">
+  Order Deny,Allow
+  Deny from all
+</Files>
+<Files "send.php">
+  Order Allow,Deny
+  Allow from all
+</Files>

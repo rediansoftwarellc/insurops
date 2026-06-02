@@ -1,189 +1,117 @@
-# Deploying InsurOps to Hostinger VPS
+# Deploying InsurOps to Hostinger (PHP / Shared Hosting)
 
-## Prerequisites
-- Hostinger VPS (Ubuntu 22.04 recommended)
-- Domain `insurops.tech` pointing to the VPS IP in Hostinger DNS
-- SSH access to the server
-
----
-
-## Step 1 — SSH into the server
-
-```bash
-ssh root@YOUR_VPS_IP
-```
+## Stack
+- **Hosting**: Hostinger Shared Hosting (Business plan or above)
+- **Language**: PHP 8.1+
+- **Email**: ZeptoMail SMTP via PHPMailer
+- **Spam protection**: Google reCAPTCHA v3
 
 ---
 
-## Step 2 — Install Node.js 20 (via nvm)
+## One-time reCAPTCHA setup (2 minutes)
 
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
-nvm install 20
-nvm use 20
-nvm alias default 20
-node -v   # should print v20.x.x
-```
-
----
-
-## Step 3 — Install PM2 and Nginx
-
-```bash
-npm install -g pm2
-apt update && apt install -y nginx certbot python3-certbot-nginx
-```
+1. Go to [google.com/recaptcha/admin/create](https://www.google.com/recaptcha/admin/create)
+2. Choose **reCAPTCHA v3**
+3. Add domains: `insurops.tech` and `localhost`
+4. Copy the **Site Key** → paste in `js/main.js` line 8:
+   ```js
+   const RECAPTCHA_SITE_KEY = 'paste_site_key_here';
+   ```
+5. Copy the **Secret Key** → paste in `config.php`:
+   ```php
+   define('RECAPTCHA_SECRET', 'paste_secret_key_here');
+   ```
 
 ---
 
-## Step 4 — Upload the project
+## Deploy to Hostinger — option A: File Manager (easiest)
 
-**Option A — Git (recommended)**
-```bash
-cd /var/www
-git clone https://github.com/YOUR_ORG/insurops.git insurops
-# OR if no git repo, use SFTP/FTP to upload the folder to /var/www/insurops
-```
-
-**Option B — SFTP from your local machine**
-```bash
-# Run this on your LOCAL machine
-scp -r /Users/pavanverma/Documents/Insurops root@YOUR_VPS_IP:/var/www/insurops
-```
-
----
-
-## Step 5 — Install dependencies
-
-```bash
-cd /var/www/insurops
-npm install --omit=dev
-```
+1. Log in to **Hostinger hPanel**
+2. Go to **Files → File Manager**
+3. Navigate to `public_html` (or your domain's folder)
+4. Upload ALL files from this project folder EXCEPT:
+   - `.git/` folder
+   - `.DS_Store`
+5. Make sure these are uploaded:
+   - `api/send.php` and `api/.htaccess`
+   - `config.php` (with your reCAPTCHA secret filled in)
+   - `vendor/` folder (the whole folder — required for PHPMailer)
+   - All `.html`, `css/`, `js/`, `images/` files
+   - `.htaccess` (root)
 
 ---
 
-## Step 6 — Create the .env file on the server
+## Deploy to Hostinger — option B: FTP (FileZilla)
+
+**Hostinger FTP credentials**: hPanel → Files → FTP Accounts
+
+1. Connect to `ftp.yourdomain.com` with your FTP credentials
+2. Upload everything from local project to `/public_html/`
+3. Ensure `.htaccess` files are included (they are hidden by default — enable "Show hidden files" in FileZilla)
+
+---
+
+## Deploy to Hostinger — option C: SSH + rsync (fastest)
+
+**Get SSH access**: hPanel → Advanced → SSH Access → Enable
 
 ```bash
-nano /var/www/insurops/.env
-```
+# Run this on your Mac terminal — replace YOUR_SERVER with your Hostinger SSH host
+rsync -az --progress \
+  --exclude '.git' \
+  --exclude '.DS_Store' \
+  --exclude '*.log' \
+  /Users/pavanverma/Documents/Insurops/ \
+  u123456789@ssh.hostinger.com:/home/u123456789/public_html/
 
-Paste the following (fill in your reCAPTCHA secret):
-
-```env
-SMTP_HOST=smtp.zeptomail.in
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=emailapikey
-SMTP_PASS=PHtE6r0MF7jp2WUrpkQJ5qLtR8WnMdsu9b40fwhH445ECfJQGk0Dr499mje3rEwjXaFBE6KTwYs55enJ5uOMdznlM2lND2qyqK3sx/VYSPOZsbq6x00euF0SdEbeV4/sdN5p1CDVudbbNA==
-SMTP_FROM=enquiry@rediansoftware.com
-SMTP_TO=hello@insurops.tech
-
-RECAPTCHA_SECRET=YOUR_RECAPTCHA_V3_SECRET_KEY
-
-PORT=3000
-NODE_ENV=production
-```
-
-Lock down the file:
-```bash
-chmod 600 /var/www/insurops/.env
+# Your SSH credentials are in hPanel → SSH Access
 ```
 
 ---
 
-## Step 7 — Create log directory
+## After upload — verify it works
 
-```bash
-mkdir -p /var/log/insurops
-```
-
----
-
-## Step 8 — Start with PM2
-
-```bash
-cd /var/www/insurops
-pm2 start ecosystem.config.js --env production
-pm2 save
-pm2 startup   # follow the printed command to enable auto-start on reboot
-```
-
-Verify it's running:
-```bash
-pm2 status
-pm2 logs insurops --lines 20
-```
+1. Visit `https://insurops.tech` — site should load
+2. Click **Request Demo**, fill in the form, submit
+3. Check `hello@insurops.tech` inbox — email should arrive from `enquiry@rediansoftware.com`
 
 ---
 
-## Step 9 — Configure Nginx
+## PHP version
 
-```bash
-cp /var/www/insurops/nginx.conf.example /etc/nginx/sites-available/insurops
-ln -s /etc/nginx/sites-available/insurops /etc/nginx/sites-enabled/insurops
-rm -f /etc/nginx/sites-enabled/default
-nginx -t && systemctl reload nginx
-```
+Hostinger shared hosting ships with PHP 8.x. Verify in hPanel:
+- **hPanel → Advanced → PHP Configuration** → set to **PHP 8.1** or **8.2**
 
 ---
 
-## Step 10 — SSL certificate (Let's Encrypt — free)
+## File permissions (if needed)
 
-```bash
-certbot --nginx -d insurops.tech -d www.insurops.tech
-```
-
-Follow the prompts. Certbot will automatically edit the Nginx config and add SSL certificates.
-
-Auto-renewal is set up automatically by certbot. Verify:
-```bash
-certbot renew --dry-run
-```
+If you get permission errors, set via File Manager:
+- `config.php` → **644**
+- `api/send.php` → **644**
+- `vendor/` folder → **755**
+- All directories → **755**
 
 ---
 
-## Updating the site
+## Troubleshooting
 
-```bash
-cd /var/www/insurops
-
-# If using Git:
-git pull
-
-# If using FTP/SFTP: re-upload changed files, then:
-npm install --omit=dev   # only needed if package.json changed
-pm2 reload insurops      # zero-downtime reload
-```
-
----
-
-## Useful PM2 commands
-
-```bash
-pm2 status                  # show running processes
-pm2 logs insurops           # tail live logs
-pm2 logs insurops --lines 100  # last 100 lines
-pm2 reload insurops         # zero-downtime restart
-pm2 restart insurops        # full restart
-pm2 stop insurops           # stop
-pm2 monit                   # live CPU/memory monitor
-```
-
----
-
-## Environment variables summary
-
-| Variable | Value |
+| Problem | Fix |
 |---|---|
-| `SMTP_HOST` | `smtp.zeptomail.in` |
-| `SMTP_PORT` | `587` |
-| `SMTP_SECURE` | `false` (STARTTLS) |
-| `SMTP_USER` | `emailapikey` |
-| `SMTP_PASS` | *(your ZeptoMail key)* |
-| `SMTP_FROM` | `enquiry@rediansoftware.com` |
-| `SMTP_TO` | `hello@insurops.tech` |
-| `RECAPTCHA_SECRET` | *(from Google reCAPTCHA admin)* |
-| `PORT` | `3000` |
-| `NODE_ENV` | `production` |
+| Form shows "Could not send email" | Check SMTP settings in `config.php`; make sure ZeptoMail sender address is verified |
+| reCAPTCHA fails silently | Check site key in `js/main.js` matches your domain |
+| 500 error on submit | Check PHP error logs: hPanel → Error Logs |
+| `.htaccess` not working | hPanel → Advanced → enable **mod_rewrite** |
+
+---
+
+## Environment summary
+
+| Setting | Value |
+|---|---|
+| SMTP Host | `smtp.zeptomail.in` |
+| SMTP Port | `587` (STARTTLS) |
+| SMTP User | `emailapikey` |
+| SMTP From | `enquiry@rediansoftware.com` |
+| SMTP To | `hello@insurops.tech` |
+| PHP min version | 8.1 |
