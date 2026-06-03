@@ -19,7 +19,7 @@ define('SMTP_TO',        'hello@insurops.tech');
 // ── Google reCAPTCHA v3 ──────────────────
 // Get keys at: https://www.google.com/recaptcha/admin/create
 // Site key goes in js/main.js — Secret key goes here
-define('RECAPTCHA_SECRET', '');   // ← paste your secret key
+define('RECAPTCHA_SECRET', '6LccIgotAAAAAC9OjcJdYTAv1lLqA9m77UWtob3n');
 
 // ── Rate limiting ────────────────────────
 define('RATE_LIMIT_MAX',    10);   // max submissions per IP

@@ -5,7 +5,7 @@
      • Add your domains (insurops.tech + localhost)
      • Put the SITE key here, SECRET key in .env (RECAPTCHA_SECRET)
 ═══════════════════════════════════════════ */
-const RECAPTCHA_SITE_KEY = 'YOUR_RECAPTCHA_V3_SITE_KEY'; // ← replace this
+const RECAPTCHA_SITE_KEY = '6LccIgotAAAAAAsKbZ8tvGvjkw_2BsZ-zgudK6Mf';
 
 /* Load reCAPTCHA v3 script dynamically (works on all pages without touching HTML) */
 (function loadRecaptcha() {
